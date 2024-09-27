@@ -6,17 +6,19 @@ const APP_KEY = 'APP_KEY';
 
 const LIBRARY_NAME = 'cw_amap';
 const IS_DEV = !!process.vusionDevEnv;
-
+function getBasePath() {
+    return window.appInfo && window.appInfo.basePath ? window.appInfo.basePath : "";
+}
 const getAMapInstanceImpl = async () => {
     const [appSecret, appKey] = await Promise.all(
         [
             !IS_DEV &&
                 fetch(
-                    `/api/system/getCustomConfig/${APP_SECRET_KEY}?group=extensions.${LIBRARY_NAME}.custom`
+                    `${getBasePath()}/api/system/getCustomConfig/${APP_SECRET_KEY}?group=extensions.${LIBRARY_NAME}.custom`
                 ).then((r) => r.text()),
             !IS_DEV &&
                 fetch(
-                    `/api/system/getCustomConfig/${APP_KEY}?group=extensions.${LIBRARY_NAME}.custom`
+                    `${getBasePath()}/api/system/getCustomConfig/${APP_KEY}?group=extensions.${LIBRARY_NAME}.custom`
                 ).then((r) => r.text()),
             IS_DEV && Promise.resolve(process.vusionDevEnv.APP_SECRET_KEY),
             IS_DEV && Promise.resolve(process.vusionDevEnv.APP_KEY),

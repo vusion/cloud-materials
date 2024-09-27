@@ -1,6 +1,6 @@
 Plugin-Version: 1.0.0
 Library-Type: Frontend
 Metadata-File: usage.json
-packages/extension/cw_amap@1.0.8/dist-theme/demo.html: dist-theme/demo.html
-packages/extension/cw_amap@1.0.8/dist-theme/index.js: dist-theme/index.js
-packages/extension/cw_amap@1.0.8/dist-theme/index.js.map: dist-theme/index.js.map
+packages/extension/cw_amap@1.0.10/dist-theme/demo.html: dist-theme/demo.html
+packages/extension/cw_amap@1.0.10/dist-theme/index.js: dist-theme/index.js
+packages/extension/cw_amap@1.0.10/dist-theme/index.js.map: dist-theme/index.js.map
